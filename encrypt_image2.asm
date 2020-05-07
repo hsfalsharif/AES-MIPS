@@ -1,9 +1,3 @@
-# ID1: 201526390
-# ID2: 201635180
-# Authors: Yusef Alamri, Mohammed Al-Oraifi
-# Section: 52
-# Side project: PGM Read and Write
-
 .data
 #"This program will read an image of type .pgm and output the image after processing."
 msg0: 	  .asciiz "\nDone!"
@@ -15,7 +9,7 @@ image_size: .word 	1				# Number of bits in image (sans header)
 file_size: .word 	1				# Number of bits in file (image + header)
 image_pixels:.space 26000			# 26000 bytes or characters, the pixels only (after finishing the call)
 out_image:  .space  26000			# 26000 bytes or characters
-cipher_key: .byte 0xcc, 0xdd, 0xee, 0xff, 0x88, 0x99, 0xaa, 0xbb, 0x44, 0x55, 0x66, 0x77, 0x00, 0x11, 0x22, 0x33
+cipher_key: .byte 0xcc, 0xdd, 0xee, 0xff, 0x88, 0x99, 0xaa, 0xbb, 0x44, 0x55, 0x66, 0x77, 0x00, 0x11, 0x22, 0x33 # cipher key can be changed but the same one must be used for decryption
 all_keys: .space 176  # 176 bytes for all of the round keys
 SBox:.byte	 0x63,0x7c,0x77,0x7b,0xf2,0x6b,0x6f,0xc5,0x30,0x01,0x67,0x2b,0xfe,0xd7,0xab,0x76
 		,0xca,0x82,0xc9,0x7d,0xfa,0x59,0x47,0xf0,0xad,0xd4,0xa2,0xaf,0x9c,0xa4,0x72,0xc0
@@ -78,7 +72,7 @@ end_main_loop:
 addi $sp, $sp, 16
 # HOW TO USE ME:
 ################################################
-# <Encryotion code goes here>
+# <Encryption code goes here>
 # You should encrypt the content of image_pixels
 # after calling the readPGM function.
 # 
